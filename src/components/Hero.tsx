@@ -25,6 +25,7 @@ export default function Hero() {
         />
       </motion.div>
 
+      <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 text-center text-white">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
           ГДЕ МОЯ МЕБЕЛЬ?
