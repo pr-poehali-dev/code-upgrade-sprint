@@ -25,6 +25,8 @@ export default function Promo() {
         </motion.div>
       </div>
 
+      <div className="absolute inset-0 bg-black/50 z-[1]" />
+
       <h3 className="absolute top-12 right-6 text-white uppercase z-10 text-sm md:text-base lg:text-lg">
         Доставка без стресса
       </h3>
