@@ -20,7 +20,7 @@ export default function Promo() {
           <img
             src="https://cdn.poehali.dev/projects/60209063-9706-4378-8822-ce32e90e1e43/bucket/db7196f8-35c8-4732-8855-1962051b48f7.jpg"
             alt="Мебель A·A Mebel"
-            className="w-full h-full object-cover sepia"
+            className="w-full h-full object-cover"
           />
         </motion.div>
       </div>
