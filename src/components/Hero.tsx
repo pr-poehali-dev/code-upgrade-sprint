@@ -1,8 +1,9 @@
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null);
+  const [orderNumber, setOrderNumber] = useState("");
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"],
@@ -33,9 +34,18 @@ export default function Hero() {
         <p className="text-lg md:text-xl max-w-2xl mx-auto px-6 opacity-90 mb-8">
           Отслеживайте доставку в реальном времени с помощью умного чат-бота. Всегда знайте, где ваш заказ.
         </p>
-        <button className="bg-white text-black px-8 py-3 text-sm uppercase tracking-widest font-semibold hover:bg-neutral-200 transition-colors duration-300 cursor-pointer">
-          Отследить заказ
-        </button>
+        <div className="flex flex-col sm:flex-row gap-0 max-w-lg mx-auto px-6 mt-2">
+          <input
+            type="text"
+            value={orderNumber}
+            onChange={(e) => setOrderNumber(e.target.value)}
+            placeholder="Введите номер заказа"
+            className="flex-1 px-5 py-4 text-black text-sm outline-none bg-white placeholder-neutral-400"
+          />
+          <button className="bg-black text-white px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-neutral-800 transition-colors duration-300 cursor-pointer whitespace-nowrap">
+            Найти
+          </button>
+        </div>
       </div>
     </div>
   );
