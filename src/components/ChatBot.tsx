@@ -6,6 +6,7 @@ const ORDERS: Record<string, string> = {
   "111111": `Ваш заказ везёт курьер Владимир. Расчётное время прибытия с 13:00 до 14:30 (по МСК).\n\nВы можете связаться с ним по телефону: +7-928-111-22-33`,
   "222222": `Ссылка на отслеживание маршрута: ввв.ссылканамаршрутизацию.ру`,
   "333333": `Ваш заказ был отменен по причине: товара нет на складе/клиент не вышел на связь/ретроградный меркурий в скорпионе`,
+  "444444": `Ваш заказ первый в маршруте у курьера. <s>не сильно радуйтесь, курьер поехал с конца маршрута.</s>`,
 };
 
 type Message = {
@@ -89,8 +90,9 @@ export default function ChatBot() {
                       ? "bg-primary text-primary-foreground rounded-br-sm"
                       : "bg-muted text-foreground rounded-bl-sm"
                   }`}
+                  dangerouslySetInnerHTML={msg.from === "bot" ? { __html: msg.text } : undefined}
                 >
-                  {msg.text}
+                  {msg.from === "user" ? msg.text : undefined}
                 </div>
               </div>
             ))}
