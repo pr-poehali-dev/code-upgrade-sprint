@@ -10,43 +10,19 @@ export default function Footer() {
             <div className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20">
               <div className="flex flex-col gap-1 sm:gap-2">
                 <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Доставка</h3>
-                <a
-                  href="#tracking"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Отследить заказ
-                </a>
-                <a
-                  href="#faq"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                <a href="#faq" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Вопросы и ответы
                 </a>
-                <a
-                  href="#contact"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                <a href="#contact" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Связаться
                 </a>
               </div>
               <div className="flex flex-col gap-1 sm:gap-2">
                 <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Поддержка</h3>
-                <a
-                  href="#chatbot"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Чат-бот
-                </a>
-                <a
-                  href="#status"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                <a href="#status" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Статусы заказов
                 </a>
-                <a
-                  href="#returns"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
+                <a href="#returns" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
                   Возврат и обмен
                 </a>
               </div>
