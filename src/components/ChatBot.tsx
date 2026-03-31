@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Icon from "@/components/ui/icon";
+import { useChatContext } from "@/context/ChatContext";
 
 const ORDERS: Record<string, string> = {
   "111111": `Ваш заказ везёт курьер Владимир. Расчётное время прибытия с 13:00 до 14:30 (по МСК).\n\nВы можете связаться с ним по телефону: +7-928-111-22-33`,
@@ -20,13 +21,22 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
   const [input, setInput] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
+  const { pendingQuery, clearPendingQuery } = useChatContext();
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open]);
 
-  function handleSend() {
-    const trimmed = input.trim();
+  useEffect(() => {
+    if (pendingQuery !== null) {
+      setOpen(true);
+      sendMessage(pendingQuery);
+      clearPendingQuery();
+    }
+  }, [pendingQuery]);
+
+  function sendMessage(text: string) {
+    const trimmed = text.trim();
     if (!trimmed) return;
 
     const userMsg: Message = { from: "user", text: trimmed };
@@ -38,6 +48,10 @@ export default function ChatBot() {
 
     setMessages((prev) => [...prev, userMsg, botMsg]);
     setInput("");
+  }
+
+  function handleSend() {
+    sendMessage(input);
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {

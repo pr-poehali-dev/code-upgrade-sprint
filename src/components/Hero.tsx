@@ -1,14 +1,26 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { useChatContext } from "@/context/ChatContext";
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null);
   const [orderNumber, setOrderNumber] = useState("");
+  const { openWithQuery } = useChatContext();
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"]);
+
+  function handleFind() {
+    if (!orderNumber.trim()) return;
+    openWithQuery(orderNumber.trim());
+    setOrderNumber("");
+  }
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") handleFind();
+  }
 
   return (
     <div
@@ -39,10 +51,14 @@ export default function Hero() {
             type="text"
             value={orderNumber}
             onChange={(e) => setOrderNumber(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder="Введите номер заказа"
             className="flex-1 px-5 py-4 text-black text-sm outline-none bg-white placeholder-neutral-400"
           />
-          <button className="bg-black text-white px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-neutral-800 transition-colors duration-300 cursor-pointer whitespace-nowrap">
+          <button
+            onClick={handleFind}
+            className="bg-black text-white px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-neutral-800 transition-colors duration-300 cursor-pointer whitespace-nowrap"
+          >
             Найти
           </button>
         </div>
