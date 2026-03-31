@@ -41,7 +41,15 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 text-center text-white">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-          ГДЕ МОЯ МЕБЕЛЬ?
+          ГДЕ МОЯ <span className="relative inline-block">
+            <span>М</span>
+            <span
+              className="absolute left-0 top-0 w-full text-white font-bold pointer-events-none select-none"
+              style={{ opacity: 0.18, clipPath: "inset(0 0 50% 0)" }}
+            >
+              АА
+            </span>
+          </span>ЕБЕЛЬ?
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto px-6 opacity-90 mb-8">
           Отслеживайте доставку в реальном времени с помощью умного чат-бота. Всегда знайте, где ваш заказ.
