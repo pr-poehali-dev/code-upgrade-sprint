@@ -1,34 +1,14 @@
 export default function Footer() {
   return (
     <div
-      className="relative h-[300px] sm:h-[350px] lg:h-[400px] max-h-[400px]"
+      className="relative h-[200px] sm:h-[220px] lg:h-[250px] max-h-[250px]"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="relative h-[calc(100vh+300px)] sm:h-[calc(100vh+350px)] lg:h-[calc(100vh+400px)] -top-[100vh]">
-        <div className="h-[300px] sm:h-[350px] lg:h-[400px] sticky top-[calc(100vh-300px)] sm:top-[calc(100vh-350px)] lg:top-[calc(100vh-400px)]">
+      <div className="relative h-[calc(100vh+200px)] sm:h-[calc(100vh+220px)] lg:h-[calc(100vh+250px)] -top-[100vh]">
+        <div className="h-[200px] sm:h-[220px] lg:h-[250px] sticky top-[calc(100vh-200px)] sm:top-[calc(100vh-220px)] lg:top-[calc(100vh-250px)]">
           <div className="bg-neutral-900 py-4 sm:py-6 lg:py-8 px-4 sm:px-6 h-full w-full flex flex-col justify-between">
-            <div className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20">
-              <div className="flex flex-col gap-1 sm:gap-2">
-                <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Доставка</h3>
-                <a href="#faq" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
-                  Вопросы и ответы
-                </a>
-                <a href="#contact" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
-                  Связаться
-                </a>
-              </div>
-              <div className="flex flex-col gap-1 sm:gap-2">
-                <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Поддержка</h3>
-                <a href="#status" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
-                  Статусы заказов
-                </a>
-                <a href="#returns" className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base">
-                  Возврат и обмен
-                </a>
-              </div>
-            </div>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-0">
-              <h1 className="text-[14vw] sm:text-[12vw] lg:text-[10vw] leading-[0.8] mt-4 sm:mt-6 lg:mt-10 text-white font-bold tracking-tight">
+              <h1 className="text-[14vw] sm:text-[12vw] lg:text-[10vw] leading-[0.8] text-white font-bold tracking-tight">
                 A·A MEBEL
               </h1>
               <p className="text-white text-sm sm:text-base">{new Date().getFullYear()} A·A Mebel</p>
